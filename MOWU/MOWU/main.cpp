@@ -1,5 +1,6 @@
 #include<graphics.h>
 #include<conio.h>
+#include"Mowu_time.h"
 
 class Self
 {

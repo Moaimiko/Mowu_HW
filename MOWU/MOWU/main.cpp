@@ -1,46 +1,32 @@
 #include<graphics.h>
 #include<conio.h>
+#include"Mowu_time.h"
 
 class Self
 {
 private:
-	int x, y,speed;
-	IMAGE selfimage[3];
-	IMAGE State;
-	int w, h;
+	int x, y;
 public:
-	Self() 
-	{
-		loadimage(&selfimage[0], _T("E:\\newtest\\picture\\left.jpg"));
-		loadimage(&selfimage[2], _T("E:\\newtest\\picture\\right.jpg"));
-		loadimage(&selfimage[1], _T("E:\\newtest\\picture\\stop.jpg"));
-		w = selfimage[1].getwidth();
-		h = selfimage[1].getheight();
-	};
-	void Selfimage()//·ÏÆúº¯Êý£»
-	{
-		
-	}
+	Self() {};
 	void Drawself()
 	{
 		setfillcolor(WHITE);
-		putimage(450, 450, &selfimage[1]);
+		fillcircle(450, 450, 10);
 		x = 450;
 		y = 450;
-		speed = 5;
 	}
 	void Moveself()
 	{
 		setlinecolor(BLACK);
 		setfillcolor(BLACK);
-		fillrectangle(x, y, (x + w), (y + h));
-		State = selfimage[1];
-		if (GetAsyncKeyState(VK_SHIFT) & 0x8000) speed = 2;else speed = 5;
-		if (GetAsyncKeyState(VK_LEFT) & 0x8000) { x = x - speed; State = selfimage[0]; }
-		if (GetAsyncKeyState(VK_RIGHT) & 0x8000) { x = x + speed; State = selfimage[2]; }
-		if (GetAsyncKeyState(VK_UP) & 0x8000)y = y - speed;
-		if (GetAsyncKeyState(VK_DOWN) & 0x8000)	y = y + speed;
-		putimage(x, y, &State);
+		fillcircle(x, y, 10);
+		if (GetAsyncKeyState(VK_LEFT) & 0x8000) x = x - 3;
+		if (GetAsyncKeyState(VK_RIGHT) & 0x8000)x = x + 3;
+		if (GetAsyncKeyState(VK_UP) & 0x8000)y = y - 3;
+		if (GetAsyncKeyState(VK_DOWN) & 0x8000)	y = y + 3;
+		setlinecolor(WHITE);
+		setfillcolor(WHITE);
+		fillcircle(x, y, 10);
 		Sleep(10);
 	}
 	int ValueofX()
@@ -51,22 +37,8 @@ public:
 	{
 		return y;
 	}
-	int SelfpointX()
-	{
-		return (x + w / 2);
-	}
-	int SelfpointY()
-	{
-		return(y + h / 2);
-	}
 }me;
 
-
-class Bullet
-{
-public:
-	Bullet(){}
-}selfbullet;
 
 class Enemy
 {
@@ -80,7 +52,7 @@ public:
 		fillcircle(100, 100, 30);
 		fillcircle(800, 100, 30);
 		Ex1 = Ey1 = 100;
-		Ex2 = 800;Ey2 = 100;
+		Ex2 = 800; Ey2 = 100;
 	}
 	void Moveenemy()
 	{
@@ -112,7 +84,7 @@ public:
 }enemy;
 void UI()
 {
-	initgraph(900, 900);
+	initgraph(640,480);
 };
 void move()
 {
@@ -126,15 +98,8 @@ void move()
 		FlushBatchDraw();
 	}
 }
-void testit()
-{
-	IMAGE test_;
-	loadimage(&test_,_T("E:\\newtest\\picture\\test.gif"));
-	putimage(0, 0, &test_);
-}
 void main()
 {
 	UI();
-	testit();
 	move();
 }

@@ -155,6 +155,7 @@
   <ItemGroup>
     <ClInclude Include="Mowu_bullet.h" />
     <ClInclude Include="Mowu_time.h" />
+    <ClInclude Include="Mowu_trail.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

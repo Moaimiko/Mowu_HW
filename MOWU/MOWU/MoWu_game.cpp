@@ -5,11 +5,15 @@
 #ifndef CONIO_H
 #include<conio.h>
 #endif // !CONIO_H
-#ifndef MOWU_TIME_H
 #include"Mowu_time.h"
-#endif // !MOWU_TIME_H
+#include"Mowu_trail.h"
+#include"Mowu_bullet.h"
+
 
 int main()
 {
-	initgraph(SCREEN_WIDTH,SCREEN_LENGTH);
+	initgraph(SCREEN_WIDTH,SCREEN_LENGTH);	//初始化UI界面
+	Bullet a = { 20,20,0,trail_line,WHITE};
+
+
 }

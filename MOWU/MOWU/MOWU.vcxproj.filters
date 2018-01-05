@@ -32,5 +32,8 @@
     <ClInclude Include="Mowu_bullet.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Mowu_trail.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

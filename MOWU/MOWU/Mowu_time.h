@@ -46,4 +46,5 @@ public:
 	{
 		endTime = clock();
 		return (endTime - startTime) * 1000 / CLOCKS_PER_SEC;
+	}
 };

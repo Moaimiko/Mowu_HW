@@ -1,5 +1,5 @@
 //Mowu_time.h
-//此头文件包含了时间相关的函数
+//定义时间相关的函数
 #ifndef CTIME
 #define CTIME
 #include<ctime>

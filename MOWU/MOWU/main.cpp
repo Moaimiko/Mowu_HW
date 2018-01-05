@@ -84,7 +84,7 @@ public:
 }enemy;
 void UI()
 {
-	initgraph(900, 900);
+	initgraph(640,480);
 };
 void move()
 {

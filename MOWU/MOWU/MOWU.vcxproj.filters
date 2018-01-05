@@ -21,9 +21,15 @@
     <ClCompile Include="MoWu_game.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Mowu_datasheet.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Mowu_time.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Mowu_bullet.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

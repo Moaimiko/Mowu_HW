@@ -13,7 +13,13 @@
 int main()
 {
 	initgraph(SCREEN_WIDTH,SCREEN_LENGTH);	//初始化UI界面
-	Bullet a = { 20,20,0,trail_line,WHITE};
-
+	Bullet a = { 20,20,50,0,trail_line,WHITE};
+	while (true)
+	{
+		BeginBatchDraw();
+		a.fresh();
+		FlushBatchDraw();
+		Sleep(20);
+	}
 
 }

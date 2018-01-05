@@ -1,6 +1,6 @@
 //Mowu_bullet.h
 //定义弹幕相关内容
-#include"Mowu_time.h"
+//#include"Mowu_time.h"
 #include<cmath>
 
 class Bullet
@@ -31,12 +31,12 @@ public:
 		setlinecolor(BLACK);
 		setfillcolor(BLACK);
 		fillcircle(nowx, nowy, r);
-		trail(time.now, nowx, nowy);
+		trail(time.now(), nowx, nowy);
 		nowx = x + nowx * cos(angle) + nowy * sin(angle);
-		nowy = y - nowx * sin(angle) + nowy(angle);
+		nowy = y - nowx * sin(angle) + nowy * cos(angle);
 		setlinecolor(color);
-		setlinecolor(color);
-		fillcircle(nowx,nowy,r);
+		setfillcolor(color);
+		fillcircle(nowx, nowy, r);
 	}
 
 };

@@ -25,3 +25,15 @@ void trail_circle_1(const int t, int &x, int &y)
 	x = 0.1*t*sin(t / 1000.0);
 	y = -0.1*t*cos(t / 1000.0);
 }
+//‘≤–Œ—≤ªÿπÏº£(ƒÊ ±’Î)
+void trail_circle_2(const int t, int &x, int &y)
+{
+	x = 0.05*t*sin(t / 1000.0);
+	y = 0.1*t*cos(t / 1000.0);
+}
+//‘≤–Œ—≤ªÿπÏº£(À≥ ±’Î)
+void trail_circle_3(const int t, int &x, int &y)
+{
+	x = 0.1*t*sin(t / 1000.0);
+	y = -0.05*t*cos(t / 1000.0);
+}

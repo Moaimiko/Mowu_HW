@@ -8,7 +8,10 @@
 #include"Mowu_time.h"
 #include"Mowu_trail.h"
 #include"Mowu_bullet.h"
+#include"Mowu_self.h"
 
+//生成自机
+Self self;
 
 int main()
 {
@@ -17,7 +20,7 @@ int main()
 	Bullet a1(320, 240, 5, 3.14159 / 2, trail_sin, WHITE);
 	Bullet a2(320, 240, 5, 3.14159, trail_sin, WHITE);
 	Bullet a3(320, 240, 5, 3.14159 * 1.5, trail_sin, WHITE);
-	Bullet a[21],b[21],c[21],d[21],e[21],f[21];
+	Bullet a[21],b[21],c[21],d[21],e[21],f[21],g[21],h[21];
 	for (int i = 0; i < 21; i++)
 	{
 		a[i].initialization(320, 240, 5, i / 20.0 * 2 * Pi, trail_sin, WHITE);
@@ -26,10 +29,13 @@ int main()
 		d[i].initialization(480, 120, 5, i / 20.0 * 2 * Pi, trail_sin, GREEN);
 		e[i].initialization(320, 120, 5, i / 20.0 * 2 * Pi, trail_circle_0, RED);
 		f[i].initialization(320, 120, 5, i / 20.0 * 2 * Pi, trail_circle_1, WHITE);
+		g[i].initialization(320, 120, 5, i / 20.0 * 2 * Pi, trail_circle_2, RED);
+		h[i].initialization(320, 120, 5, i / 20.0 * 2 * Pi, trail_circle_3, WHITE);
 	}
 	while (true)
 	{
 		BeginBatchDraw();
+		self.Moveself();
 		for (int i = 0; i < 21; i++)
 		{
 			a[i].fresh();
@@ -38,9 +44,11 @@ int main()
 			d[i].fresh();
 			e[i].fresh();
 			f[i].fresh();
+			g[i].fresh();
+			h[i].fresh();
 		}
 		FlushBatchDraw();
-		Sleep(20);
+		//解锁帧率，否则请Sleep();
 	}
 
 }

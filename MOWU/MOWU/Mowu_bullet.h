@@ -60,9 +60,13 @@ public:
 		trail(time.now(), a, b);
 		nowx = x + a * cos(angle) - b * sin(angle);
 		nowy = y + a * sin(angle) + b * cos(angle);
-		setlinecolor(color);
+		setlinecolor(WHITE);
 		setfillcolor(color);
 		fillcircle(nowx, nowy, r);
+		if (time.now()>7000)
+		{
+			time.start();
+		}
 	}
 
 };

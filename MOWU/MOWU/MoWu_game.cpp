@@ -51,5 +51,9 @@ int main()
 		//Ω‚À¯÷°¬ £¨∑Ò‘Ú«ÎSleep();
 		Sleep(20);
 	}
-	system("pause");
+	setlinecolor(WHITE);
+	RECT r = { 0, 0, 640, 480 };
+	drawtext(_T("Failed"), &r, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
+	_getch();
+	closegraph();
 }

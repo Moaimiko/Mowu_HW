@@ -9,6 +9,8 @@ private:
 	int y;			//³õÊ¼Î»ÖÃ:y
 	int nowx = 0;	//×ø±êÎ»ÖÃ:x'
 	int nowy = 0;	//×ø±êÎ»ÖÃ:y'
+	int delta_x;	//µ¯Ä»×Ô»ú¾àÀë²î:x
+	int delta_y;	//µ¯Ä»×Ô»ú¾àÀë²î:y
 	int r;			//µ¯Ä»°ë¾¶
 	double angle;	//»æÖÆ½Ç¶È
 	void(*trail)(int, int&, int&);//Â·¾¶ÑùÊ½
@@ -63,7 +65,20 @@ public:
 		setlinecolor(WHITE);
 		setfillcolor(color);
 		fillcircle(nowx, nowy, r);
-		if (time.now()>7000)
+		setfillcolor(WHITE);
+		delta_x = nowx - self.SelfpointX();
+		delta_y = nowy - self.SelfpointY();
+		if (
+			delta_x < SAFE_DISTANCE&&
+			delta_x > -1*SAFE_DISTANCE&&
+			delta_y < SAFE_DISTANCE&&
+			delta_y > -1*SAFE_DISTANCE&&
+			delta_x*delta_x + delta_y * delta_y <= r*r
+			)
+		{
+			alive = false;
+		}
+		if (time.now() > 7000)
 		{
 			time.start();
 		}

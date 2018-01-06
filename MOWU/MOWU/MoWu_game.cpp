@@ -6,12 +6,12 @@
 #include<conio.h>
 #endif // !CONIO_H
 #include"Mowu_time.h"
+#include"Mowu_self.h"
+Self self;
+bool alive{ true };
 #include"Mowu_trail.h"
 #include"Mowu_bullet.h"
-#include"Mowu_self.h"
 
-//生成自机
-Self self;
 
 int main()
 {
@@ -21,7 +21,7 @@ int main()
 	Bullet a2(320, 240, 5, 3.14159, trail_sin, WHITE);
 	Bullet a3(320, 240, 5, 3.14159 * 1.5, trail_sin, WHITE);
 	Bullet a[21],b[21],c[21],d[21],e[21],f[21],g[21],h[21];
-	for (int i = 0; i < 21; i++)
+	for (int i = 0; i < 20; i++)
 	{
 		a[i].initialization(320, 240, 5, i / 20.0 * 2 * Pi, trail_sin, WHITE);
 		b[i].initialization(320, 240, 5, i / 20.0 * 2 * Pi, trail_line, YELLOW);
@@ -32,11 +32,11 @@ int main()
 		g[i].initialization(320, 120, 5, i / 20.0 * 2 * Pi, trail_circle_2, RED);
 		h[i].initialization(320, 120, 5, i / 20.0 * 2 * Pi, trail_circle_3, WHITE);
 	}
-	while (true)
+	while (alive)
 	{
 		BeginBatchDraw();
 		self.Moveself();
-		for (int i = 0; i < 21; i++)
+		for (int i = 0; i < 20; i++)
 		{
 			a[i].fresh();
 			b[i].fresh();
@@ -49,6 +49,7 @@ int main()
 		}
 		FlushBatchDraw();
 		//解锁帧率，否则请Sleep();
+		Sleep(20);
 	}
-
+	system("pause");
 }

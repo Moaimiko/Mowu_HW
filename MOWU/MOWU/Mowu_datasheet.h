@@ -7,4 +7,6 @@
 //屏幕宽度
 #define SCREEN_WIDTH 640
 //Pi
-const int Pi = 3.141529535;
+const double Pi = 3.141529535;
+//安全矩形区
+const int SAFE_DISTANCE = 50;

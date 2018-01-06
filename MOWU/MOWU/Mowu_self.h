@@ -23,9 +23,9 @@ public:
 	void Drawself()
 	{
 		setfillcolor(WHITE);
-		putimage(450, 450, &selfimage[1]);
-		x = 450;
-		y = 450;
+		putimage(900, 900, &selfimage[1]);
+		x = 900;
+		y = 900;
 		speed = 5;
 	}
 	void Moveself()

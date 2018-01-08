@@ -15,17 +15,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="MoWu_game.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Mowu_datasheet.h">
       <Filter>头文件</Filter>
-    </ClCompile>
-    <ClCompile Include="源.cpp">
-      <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Mowu_self.h">
       <Filter>头文件</Filter>

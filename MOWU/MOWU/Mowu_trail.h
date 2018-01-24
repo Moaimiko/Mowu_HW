@@ -43,3 +43,9 @@ void trail_stop(const int t, int &x, int &y)
 	x = 0;
 	y = 0;
 }
+//追踪弹幕轨迹
+void trail_follow(const int i, int &x, int &y)
+{
+	x = 0;
+	y = 0;
+}

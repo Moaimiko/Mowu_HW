@@ -34,7 +34,7 @@ public:
 		setfillcolor(BLACK);
 		fillrectangle(x, y, (x + w), (y + h));
 		State = selfimage[1];
-		if (GetAsyncKeyState(VK_SHIFT) & 0x8000) speed = 2; else speed = 5;
+		if (GetAsyncKeyState(VK_SHIFT) & 0x8000) speed = 5; else speed = 10;
 		if (GetAsyncKeyState(VK_LEFT) & 0x8000) { x = x - speed; State = selfimage[0]; }
 		if (GetAsyncKeyState(VK_RIGHT) & 0x8000) { x = x + speed; State = selfimage[2]; }
 		if (GetAsyncKeyState(VK_UP) & 0x8000)y = y - speed;
